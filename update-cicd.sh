@@ -340,6 +340,10 @@ declare -a themes=(
 mkdir temp
 cd temp
 
+git config pull.rebase >&- || git config pull.rebase true
+git config --global user.email "github-actions[bot]@users.noreply.github.com"
+git config --global user.name "github-actions[bot]"
+
 #for i in "${small[@]}"; do
 for i in "${themes[@]}"; do
   echo "Start ${i}"
